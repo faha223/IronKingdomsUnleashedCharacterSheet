@@ -1,0 +1,673 @@
+﻿{
+  "RaceStats": [
+    {
+      "Name": "Bog_Trog",
+      "Physique": {
+        "StartingValue": 6,
+        "HeroLimit": 7,
+        "VetLimit": 8,
+        "EpicLimit": 9
+      },
+      "Speed": {
+        "StartingValue": 5,
+        "HeroLimit": 6,
+        "VetLimit": 6,
+        "EpicLimit": 6
+      },
+      "Strength": {
+        "StartingValue": 5,
+        "HeroLimit": 7,
+        "VetLimit": 8,
+        "EpicLimit": 9
+      },
+      "Agility": {
+        "StartingValue": 3,
+        "HeroLimit": 5,
+        "VetLimit": 6,
+        "EpicLimit": 7
+      },
+      "Prowess": {
+        "StartingValue": 4,
+        "HeroLimit": 5,
+        "VetLimit": 6,
+        "EpicLimit": 7
+      },
+      "Poise": {
+        "StartingValue": 2,
+        "HeroLimit": 3,
+        "VetLimit": 4,
+        "EpicLimit": 5
+      },
+      "Intelligence": {
+        "StartingValue": 2,
+        "HeroLimit": 4,
+        "VetLimit": 5,
+        "EpicLimit": 6
+      },
+      "Arcane": {
+        "StartingValue": 0,
+        "HeroLimit": 4,
+        "VetLimit": 6,
+        "EpicLimit": 7
+      },
+      "Perception": {
+        "StartingValue": 3,
+        "HeroLimit": 4,
+        "VetLimit": 5,
+        "EpicLimit": 6
+      }
+    },
+    {
+      "Name": "Farrow",
+      "Physique": {
+        "StartingValue": 6,
+        "HeroLimit": 8,
+        "VetLimit": 8,
+        "EpicLimit": 9
+      },
+      "Speed": {
+        "StartingValue": 5,
+        "HeroLimit": 6,
+        "VetLimit": 6,
+        "EpicLimit": 6
+      },
+      "Strength": {
+        "StartingValue": 5,
+        "HeroLimit": 7,
+        "VetLimit": 7,
+        "EpicLimit": 9
+      },
+      "Agility": {
+        "StartingValue": 3,
+        "HeroLimit": 5,
+        "VetLimit": 6,
+        "EpicLimit": 7
+      },
+      "Prowess": {
+        "StartingValue": 4,
+        "HeroLimit": 5,
+        "VetLimit": 6,
+        "EpicLimit": 7
+      },
+      "Poise": {
+        "StartingValue": 3,
+        "HeroLimit": 4,
+        "VetLimit": 5,
+        "EpicLimit": 6
+      },
+      "Intelligence": {
+        "StartingValue": 3,
+        "HeroLimit": 4,
+        "VetLimit": 5,
+        "EpicLimit": 6
+      },
+      "Arcane": {
+        "StartingValue": 0,
+        "HeroLimit": 4,
+        "VetLimit": 6,
+        "EpicLimit": 7
+      },
+      "Perception": {
+        "StartingValue": 3,
+        "HeroLimit": 4,
+        "VetLimit": 6,
+        "EpicLimit": 7
+      }
+    },
+    {
+      "Name": "Gatorman",
+      "Physique": {
+        "StartingValue": 6,
+        "HeroLimit": 8,
+        "VetLimit": 9,
+        "EpicLimit": 10
+      },
+      "Speed": {
+        "StartingValue": 5,
+        "HeroLimit": 6,
+        "VetLimit": 6,
+        "EpicLimit": 6
+      },
+      "Strength": {
+        "StartingValue": 6,
+        "HeroLimit": 8,
+        "VetLimit": 9,
+        "EpicLimit": 10
+      },
+      "Agility": {
+        "StartingValue": 3,
+        "HeroLimit": 4,
+        "VetLimit": 5,
+        "EpicLimit": 6
+      },
+      "Prowess": {
+        "StartingValue": 4,
+        "HeroLimit": 5,
+        "VetLimit": 6,
+        "EpicLimit": 7
+      },
+      "Poise": {
+        "StartingValue": 2,
+        "HeroLimit": 3,
+        "VetLimit": 3,
+        "EpicLimit": 4
+      },
+      "Intelligence": {
+        "StartingValue": 3,
+        "HeroLimit": 5,
+        "VetLimit": 5,
+        "EpicLimit": 6
+      },
+      "Arcane": {
+        "StartingValue": 0,
+        "HeroLimit": 4,
+        "VetLimit": 6,
+        "EpicLimit": 7
+      },
+      "Perception": {
+        "StartingValue": 2,
+        "HeroLimit": 4,
+        "VetLimit": 5,
+        "EpicLimit": 6
+      }
+    },
+    {
+      "Name": "Human",
+      "Physique": {
+        "StartingValue": 5,
+        "HeroLimit": 7,
+        "VetLimit": 8,
+        "EpicLimit": 8
+      },
+      "Speed": {
+        "StartingValue": 6,
+        "HeroLimit": 7,
+        "VetLimit": 7,
+        "EpicLimit": 7
+      },
+      "Strength": {
+        "StartingValue": 4,
+        "HeroLimit": 6,
+        "VetLimit": 7,
+        "EpicLimit": 8
+      },
+      "Agility": {
+        "StartingValue": 3,
+        "HeroLimit": 5,
+        "VetLimit": 6,
+        "EpicLimit": 7
+      },
+      "Prowess": {
+        "StartingValue": 4,
+        "HeroLimit": 5,
+        "VetLimit": 6,
+        "EpicLimit": 7
+      },
+      "Poise": {
+        "StartingValue": 4,
+        "HeroLimit": 5,
+        "VetLimit": 6,
+        "EpicLimit": 7
+      },
+      "Intelligence": {
+        "StartingValue": 3,
+        "HeroLimit": 5,
+        "VetLimit": 6,
+        "EpicLimit": 7
+      },
+      "Arcane": {
+        "StartingValue": 0,
+        "HeroLimit": 4,
+        "VetLimit": 6,
+        "EpicLimit": 8
+      },
+      "Perception": {
+        "StartingValue": 3,
+        "HeroLimit": 5,
+        "VetLimit": 6,
+        "EpicLimit": 7
+      }
+    },
+    {
+      "Name": "Nyss",
+      "Physique": {
+        "StartingValue": 5,
+        "HeroLimit": 7,
+        "VetLimit": 7,
+        "EpicLimit": 8
+      },
+      "Speed": {
+        "StartingValue": 6,
+        "HeroLimit": 7,
+        "VetLimit": 7,
+        "EpicLimit": 7
+      },
+      "Strength": {
+        "StartingValue": 4,
+        "HeroLimit": 6,
+        "VetLimit": 7,
+        "EpicLimit": 8
+      },
+      "Agility": {
+        "StartingValue": 4,
+        "HeroLimit": 5,
+        "VetLimit": 6,
+        "EpicLimit": 7
+      },
+      "Prowess": {
+        "StartingValue": 4,
+        "HeroLimit": 5,
+        "VetLimit": 6,
+        "EpicLimit": 7
+      },
+      "Poise": {
+        "StartingValue": 4,
+        "HeroLimit": 5,
+        "VetLimit": 6,
+        "EpicLimit": 7
+      },
+      "Intelligence": {
+        "StartingValue": 3,
+        "HeroLimit": 5,
+        "VetLimit": 6,
+        "EpicLimit": 6
+      },
+      "Arcane": {
+        "StartingValue": 0,
+        "HeroLimit": 4,
+        "VetLimit": 6,
+        "EpicLimit": 7
+      },
+      "Perception": {
+        "StartingValue": 3,
+        "HeroLimit": 5,
+        "VetLimit": 6,
+        "EpicLimit": 6
+      }
+    },
+    {
+      "Name": "Pyg",
+      "Physique": {
+        "StartingValue": 5,
+        "HeroLimit": 7,
+        "VetLimit": 8,
+        "EpicLimit": 9
+      },
+      "Speed": {
+        "StartingValue": 6,
+        "HeroLimit": 7,
+        "VetLimit": 7,
+        "EpicLimit": 7
+      },
+      "Strength": {
+        "StartingValue": 4,
+        "HeroLimit": 6,
+        "VetLimit": 7,
+        "EpicLimit": 8
+      },
+      "Agility": {
+        "StartingValue": 3,
+        "HeroLimit": 5,
+        "VetLimit": 6,
+        "EpicLimit": 7
+      },
+      "Prowess": {
+        "StartingValue": 3,
+        "HeroLimit": 5,
+        "VetLimit": 6,
+        "EpicLimit": 6
+      },
+      "Poise": {
+        "StartingValue": 4,
+        "HeroLimit": 5,
+        "VetLimit": 6,
+        "EpicLimit": 7
+      },
+      "Intelligence": {
+        "StartingValue": 3,
+        "HeroLimit": 4,
+        "VetLimit": 5,
+        "EpicLimit": 6
+      },
+      "Arcane": {
+        "StartingValue": 0,
+        "HeroLimit": 0,
+        "VetLimit": 0,
+        "EpicLimit": 0
+      },
+      "Perception": {
+        "StartingValue": 3,
+        "HeroLimit": 5,
+        "VetLimit": 6,
+        "EpicLimit": 6
+      }
+    },
+    {
+      "Name": "Tharn",
+      "Physique": {
+        "StartingValue": 6,
+        "HeroLimit": 7,
+        "VetLimit": 8,
+        "EpicLimit": 9
+      },
+      "Speed": {
+        "StartingValue": 6,
+        "HeroLimit": 7,
+        "VetLimit": 7,
+        "EpicLimit": 7
+      },
+      "Strength": {
+        "StartingValue": 5,
+        "HeroLimit": 7,
+        "VetLimit": 7,
+        "EpicLimit": 8
+      },
+      "Agility": {
+        "StartingValue": 3,
+        "HeroLimit": 5,
+        "VetLimit": 6,
+        "EpicLimit": 7
+      },
+      "Prowess": {
+        "StartingValue": 4,
+        "HeroLimit": 5,
+        "VetLimit": 6,
+        "EpicLimit": 7
+      },
+      "Poise": {
+        "StartingValue": 3,
+        "HeroLimit": 4,
+        "VetLimit": 5,
+        "EpicLimit": 6
+      },
+      "Intelligence": {
+        "StartingValue": 3,
+        "HeroLimit": 4,
+        "VetLimit": 5,
+        "EpicLimit": 6
+      },
+      "Arcane": {
+        "StartingValue": 0,
+        "HeroLimit": 4,
+        "VetLimit": 6,
+        "EpicLimit": 7
+      },
+      "Perception": {
+        "StartingValue": 3,
+        "HeroLimit": 5,
+        "VetLimit": 6,
+        "EpicLimit": 6
+      }
+    },
+    {
+      "Name": "Trollkin",
+      "Physique": {
+        "StartingValue": 6,
+        "HeroLimit": 8,
+        "VetLimit": 9,
+        "EpicLimit": 10
+      },
+      "Speed": {
+        "StartingValue": 5,
+        "HeroLimit": 6,
+        "VetLimit": 6,
+        "EpicLimit": 6
+      },
+      "Strength": {
+        "StartingValue": 5,
+        "HeroLimit": 7,
+        "VetLimit": 8,
+        "EpicLimit": 9
+      },
+      "Agility": {
+        "StartingValue": 3,
+        "HeroLimit": 5,
+        "VetLimit": 6,
+        "EpicLimit": 7
+      },
+      "Prowess": {
+        "StartingValue": 4,
+        "HeroLimit": 5,
+        "VetLimit": 6,
+        "EpicLimit": 7
+      },
+      "Poise": {
+        "StartingValue": 2,
+        "HeroLimit": 4,
+        "VetLimit": 5,
+        "EpicLimit": 6
+      },
+      "Intelligence": {
+        "StartingValue": 3,
+        "HeroLimit": 4,
+        "VetLimit": 5,
+        "EpicLimit": 6
+      },
+      "Arcane": {
+        "StartingValue": 0,
+        "HeroLimit": 4,
+        "VetLimit": 6,
+        "EpicLimit": 7
+      },
+      "Perception": {
+        "StartingValue": 3,
+        "HeroLimit": 4,
+        "VetLimit": 5,
+        "EpicLimit": 6
+      }
+    }
+  ],
+  "Careers": [
+    {
+      "Name": "Archer",
+      "StartingCareerOnly": false
+    },
+    {
+      "Name": "Blackclad",
+      "RequiredRace": [
+        "Human"
+      ],
+      "RequiredArchetype": "Gifted",
+      "StartingCareerOnly": true
+    },
+    {
+      "Name": "Bloodtracker",
+      "RequiredRace": [
+        "Tharn"
+      ],
+      "RequiredSex": "Female",
+      "StartingCareerOnly": false
+    },
+    {
+      "Name": "Bloodweaver",
+      "RequiredRace": [
+        "Tharn"
+      ],
+      "RequiredSex": "Female",
+      "RequiredArchetype": "Gifted",
+      "StartingCareerOnly": false
+    },
+    {
+      "Name": "Bokor",
+      "RequiredRace": [
+        "Gatorman"
+      ],
+      "RequiredArchetype": "Gifted",
+      "StartingCareerOnly": false
+    },
+    {
+      "Name": "Bone Grinder",
+      "RequiredArchetype": "Gifted",
+      "StartingCareerOnly": false
+    },
+    {
+      "Name": "Brigand",
+      "StartingCareerOnly": false
+    },
+    {
+      "Name": "Bushwacker",
+      "StartingCareerOnly": false
+    },
+    {
+      "Name": "Chieftan",
+      "StartingCareerOnly": false
+    },
+    {
+      "Name": "Fell Caller",
+      "RequiredRace": [
+        "Trollkin"
+      ],
+      "StartingCareerOnly": false
+    },
+    {
+      "Name": "Fennblade",
+      "RequiredRace": [
+        "Trollkin"
+      ],
+      "StartingCareerOnly": false
+    },
+    {
+      "Name": "Kriel Champion",
+      "RequiredRace": [
+        "Trollkin"
+      ],
+      "StartingCareerOnly": false
+    },
+    {
+      "Name": "Long Rider",
+      "RequiredRace": [
+        "Trollkin"
+      ],
+      "StartingCareerOnly": false
+    },
+    {
+      "Name": "Mist Speaker",
+      "RequiredRace": [
+        "Bog_Trog"
+      ],
+      "RequiredArchetype": "Gifted",
+      "StartingCareerOnly": false
+    },
+    {
+      "Name": "Monster Hunter",
+      "StartingCareerOnly": false
+    },
+    {
+      "Name": "Priest of Nyssor",
+      "RequiredRace": [
+        "Nyss"
+      ],
+      "RequiredArchetype": "Gifted",
+      "StartingCareerOnly": false
+    },
+    {
+      "Name": "Raptor",
+      "RequiredRace": [
+        "Nyss"
+      ],
+      "StartingCareerOnly": false
+    },
+    {
+      "Name": "Ravager",
+      "RequiredRace": [
+        "Tharn"
+      ],
+      "RequiredSex": "Male",
+      "StartingCareerOnly": false
+    },
+    {
+      "Name": "Ryssovass",
+      "RequiredRace": [
+        "Nyss"
+      ],
+      "StartingCareerOnly": true
+    },
+    {
+      "Name": "Scout",
+      "StartingCareerOnly": false
+    },
+    {
+      "Name": "Shaman (Devourer Wurm)",
+      "RequiredRace": [
+        "Human",
+        "Tharn"
+      ],
+      "RequiredArchetype": "Gifted",
+      "StartingCareerOnly": false
+    },
+    {
+      "Name": "Shaman (Dhunia)",
+      "RequiredRace": [
+        "Farrow",
+        "Trollkin"
+      ],
+      "RequiredArchetype": "Gifted",
+      "StartingCareerOnly": false
+    },
+    {
+      "Name": "Slaughterhouser",
+      "RequiredRace": [
+        "Farrow"
+      ],
+      "StartingCareerOnly": true
+    },
+    {
+      "Name": "Sorcerer",
+      "RequiredArchetype": "Gifted",
+      "StartingCareerOnly": true
+    },
+    {
+      "Name": "Warlock (Circle)",
+      "RequiredRace": [
+        "Human",
+        "Tharn"
+      ],
+      "RequiredArchetype": "Gifted",
+      "StartingCareerOnly": true
+    },
+    {
+      "Name": "Warlock (Farrow)",
+      "RequiredRace": [
+        "Farrow"
+      ],
+      "RequiredArchetype": "Gifted",
+      "StartingCareerOnly": true
+    },
+    {
+      "Name": "Warlock (Swamp)",
+      "RequiredRace": [
+        "Bog_Trog",
+        "Gatorman"
+      ],
+      "RequiredArchetype": "Gifted",
+      "StartingCareerOnly": true
+    },
+    {
+      "Name": "Warlock (Trollkin)",
+      "RequiredRace": [
+        "Trollkin"
+      ],
+      "RequiredArchetype": "Gifted",
+      "StartingCareerOnly": true
+    },
+    {
+      "Name": "Warrior",
+      "StartingCareerOnly": false
+    },
+    {
+      "Name": "Wolf of Orboros",
+      "RequiredRace": [
+        "Human"
+      ],
+      "StartingCareerOnly": true
+    },
+    {
+      "Name": "Wolf Rider",
+      "RequiredRace": [
+        "Human",
+        "Tharn"
+      ],
+      "StartingCareerOnly": true
+    }
+  ]
+}
