@@ -16,6 +16,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.ComponentModel;
 
 namespace IronKingdomsUnleashedCharacterSheet
 {
@@ -29,6 +30,7 @@ namespace IronKingdomsUnleashedCharacterSheet
             GameData.Tables.Initialize();
             InitializeComponent();
             DataContext = CharacterSheetViewModel.Generate();
+            Closing += onClosing;
         }
 
         private void Save_Click(object sender, RoutedEventArgs e)
@@ -50,6 +52,25 @@ namespace IronKingdomsUnleashedCharacterSheet
             if (result.HasValue && result.Value)
             {
                 DataContext = JsonConvert.DeserializeObject<CharacterSheetViewModel>(File.ReadAllText(dlg.FileName));
+            }
+        }
+
+        private void Exit_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+        private void onClosing(object sender, CancelEventArgs e)
+        {
+            var result = MessageBox.Show("Save Changes?", "Exiting", MessageBoxButton.YesNoCancel);
+            switch (result)
+            {
+                case MessageBoxResult.Yes:
+                    Save_Click(sender, null);
+                    break;
+                case MessageBoxResult.Cancel:
+                    e.Cancel = true;
+                    break;
             }
         }
     }

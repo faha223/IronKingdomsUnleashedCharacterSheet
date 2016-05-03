@@ -428,7 +428,7 @@
                 <MenuItem Header="Save" Click="Save_Click" />
                 <MenuItem Header="Load" Click="Load_Click" />
                 <Separator />
-                <MenuItem Header="Exit"/>
+                <MenuItem Header="Exit" Click="Exit_Click" />
             </MenuItem>
         </Menu>
         <TabControl Grid.Row="1">
