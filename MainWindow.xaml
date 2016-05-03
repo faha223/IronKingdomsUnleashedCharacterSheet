@@ -10,7 +10,7 @@
         xmlns:sys="clr-namespace:System;assembly=mscorlib"
         xmlns:Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero2"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="Iron Kingodms Unleashed Character Sheet" Height="960" Width="1280">
     <Window.Resources>
         <converters:EnumStringCleaner x:Key="EnumStringCleaner" />
         <converters:CaseConverter x:Key="CaseConverter" />
