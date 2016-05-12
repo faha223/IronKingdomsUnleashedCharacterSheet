@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:IronKingdomsUnleashedCharacterSheet"
+        xmlns:controls="clr-namespace:IronKingdomsUnleashedCharacterSheet.CustomControls"
         xmlns:gameData="clr-namespace:IronKingdomsUnleashedCharacterSheet.GameData"
         xmlns:converters="clr-namespace:IronKingdomsUnleashedCharacterSheet.ValueConverters"
         xmlns:ui="clr-namespace:IronKingdomsUnleashedCharacterSheet.UIHelpers"
@@ -308,11 +309,11 @@
             </DataTemplate.Resources>
             <DockPanel Width="240">
                 <StackPanel DockPanel.Dock="Right" Orientation="Horizontal">
-                    <local:NumBox Value="{Binding SetParentValue}" Width="24" Height="24" DataFontSize="10" />
+                    <controls:NumBox Value="{Binding SetParentValue}" Width="24" Height="24" DataFontSize="10" />
                     <TextBlock Text="+" VerticalAlignment="Center" />
-                    <local:NumBox Value="{Binding SkillLevel}" Width="24" Height="24" DataFontSize="10" />
+                    <controls:NumBox Value="{Binding SkillLevel}" Width="24" Height="24" DataFontSize="10" />
                     <TextBlock Text="=" VerticalAlignment="Center" />
-                    <local:NumBox Value="{Binding Total, Mode=OneWay}" IsReadOnly="true" Width="24" Height="24" DataFontSize="10" />
+                    <controls:NumBox Value="{Binding Total, Mode=OneWay}" IsReadOnly="true" Width="24" Height="24" DataFontSize="10" />
                 </StackPanel>
                 <TextBox Text="{Binding Name}" IsReadOnly="{Binding NameIsReadOnly}" VerticalAlignment="Center" FontStyle="Normal" />
             </DockPanel>
@@ -527,7 +528,7 @@
                                 <TextBlock Text="total xp earned" HorizontalAlignment="Center" FontSize="8" />
                             </StackPanel>
                             <StackPanel Grid.Column="8" Grid.ColumnSpan="7" Grid.Row="1">
-                                <ComboBox ItemsSource="{Binding Careers}" DisplayMemberPath="Name" SelectedItem="{Binding Career}" />
+                                <controls:MultiselectComboBox ItemsSource="{Binding Careers}" SelectedItems="{Binding SelectedCareers, Mode=TwoWay}" MaxItemsSelected="2" />
                                 <TextBlock Text="careers" />
                             </StackPanel>
                             <StackPanel Grid.Column="16" Grid.ColumnSpan="9" Grid.Row="1">
@@ -592,8 +593,8 @@
                                         <RowDefinition Height="2*"/>
                                         <RowDefinition />
                                     </Grid.RowDefinitions>
-                                    <local:StatBox Value="{Binding Physique}" DataFontSize="30" Header="PHY" Grid.Row="1" Grid.RowSpan="2" Grid.Column="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
-                                    <local:StatBox Margin="2,0,0,0" Grid.Column="1" Grid.Row="2" Value="{Binding MaxPhysique, Mode=OneWay}" DataFontSize="24" HeaderFontSize="8" Header="MAX" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" IsReadOnly="true" />
+                                    <controls:StatBox Value="{Binding Physique}" DataFontSize="30" Header="PHY" Grid.Row="1" Grid.RowSpan="2" Grid.Column="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
+                                    <controls:StatBox Margin="2,0,0,0" Grid.Column="1" Grid.Row="2" Value="{Binding MaxPhysique, Mode=OneWay}" DataFontSize="24" HeaderFontSize="8" Header="MAX" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" IsReadOnly="true" />
                                 </Grid>
                                 <!--Speed-->
                                 <Grid Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="2.5">
@@ -607,8 +608,8 @@
                                         <RowDefinition Height="4*"/>
                                         <RowDefinition />
                                     </Grid.RowDefinitions>
-                                    <local:StatBox Value="{Binding Speed}" Header="SPD" Grid.Row="1" Grid.RowSpan="2" Grid.Column="0" DataFontSize="24" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
-                                    <local:StatBox Margin="2,0,0,0" Grid.Column="1" Grid.Row="2" Value="{Binding MaxSpeed, Mode=OneWay}" DataFontSize="16" HeaderFontSize="8" Header="MAX" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" IsReadOnly="true" />
+                                    <controls:StatBox Value="{Binding Speed}" Header="SPD" Grid.Row="1" Grid.RowSpan="2" Grid.Column="0" DataFontSize="24" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
+                                    <controls:StatBox Margin="2,0,0,0" Grid.Column="1" Grid.Row="2" Value="{Binding MaxSpeed, Mode=OneWay}" DataFontSize="16" HeaderFontSize="8" Header="MAX" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" IsReadOnly="true" />
                                 </Grid>
                                 <!--Strength-->
                                 <Grid Grid.Column="1" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="2.5">
@@ -622,8 +623,8 @@
                                         <RowDefinition Height="4*"/>
                                         <RowDefinition />
                                     </Grid.RowDefinitions>
-                                    <local:StatBox Value="{Binding Strength}" Header="PHY" Grid.Row="1" Grid.RowSpan="2" Grid.Column="0" DataFontSize="24" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
-                                    <local:StatBox Margin="2,0,0,0" Grid.Column="1" Grid.Row="2" Value="{Binding MaxStrength, Mode=OneWay}" DataFontSize="16" HeaderFontSize="8" Header="MAX" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" IsReadOnly="true" />
+                                    <controls:StatBox Value="{Binding Strength}" Header="PHY" Grid.Row="1" Grid.RowSpan="2" Grid.Column="0" DataFontSize="24" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
+                                    <controls:StatBox Margin="2,0,0,0" Grid.Column="1" Grid.Row="2" Value="{Binding MaxStrength, Mode=OneWay}" DataFontSize="16" HeaderFontSize="8" Header="MAX" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" IsReadOnly="true" />
                                 </Grid>
                                 <!--Agility-->
                                 <Grid Grid.Row="3" Grid.RowSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="2.5">
@@ -637,8 +638,8 @@
                                         <RowDefinition Height="2*"/>
                                         <RowDefinition />
                                     </Grid.RowDefinitions>
-                                    <local:StatBox Value="{Binding Agility}" DataFontSize="30" Header="AGL" Grid.Row="1" Grid.RowSpan="2" Grid.Column="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
-                                    <local:StatBox Margin="2,0,0,0" Grid.Column="1" Grid.Row="2" Value="{Binding MaxAgility, Mode=OneWay}" DataFontSize="24" HeaderFontSize="8" Header="MAX" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" IsReadOnly="true" />
+                                    <controls:StatBox Value="{Binding Agility}" DataFontSize="30" Header="AGL" Grid.Row="1" Grid.RowSpan="2" Grid.Column="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
+                                    <controls:StatBox Margin="2,0,0,0" Grid.Column="1" Grid.Row="2" Value="{Binding MaxAgility, Mode=OneWay}" DataFontSize="24" HeaderFontSize="8" Header="MAX" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" IsReadOnly="true" />
                                 </Grid>
                                 <!--Prowess-->
                                 <Grid Grid.Row="3" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="2.5">
@@ -652,8 +653,8 @@
                                         <RowDefinition Height="4*"/>
                                         <RowDefinition />
                                     </Grid.RowDefinitions>
-                                    <local:StatBox Value="{Binding Prowess}" Header="PRW" Grid.Row="1" Grid.RowSpan="2" Grid.Column="0" DataFontSize="24" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
-                                    <local:StatBox Margin="2,0,0,0" Grid.Column="1" Grid.Row="2" Value="{Binding MaxProwess, Mode=OneWay}" DataFontSize="16" HeaderFontSize="8" Header="MAX" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" IsReadOnly="true" />
+                                    <controls:StatBox Value="{Binding Prowess}" Header="PRW" Grid.Row="1" Grid.RowSpan="2" Grid.Column="0" DataFontSize="24" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
+                                    <controls:StatBox Margin="2,0,0,0" Grid.Column="1" Grid.Row="2" Value="{Binding MaxProwess, Mode=OneWay}" DataFontSize="16" HeaderFontSize="8" Header="MAX" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" IsReadOnly="true" />
                                 </Grid>
                                 <!--Poise-->
                                 <Grid Grid.Column="1" Grid.Row="4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="2.5">
@@ -667,8 +668,8 @@
                                         <RowDefinition Height="4*"/>
                                         <RowDefinition />
                                     </Grid.RowDefinitions>
-                                    <local:StatBox Value="{Binding Poise}" Header="POI" Grid.Row="1" Grid.RowSpan="2" Grid.Column="0" DataFontSize="24" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
-                                    <local:StatBox Margin="2,0,0,0" Grid.Column="1" Grid.Row="2" Value="{Binding MaxPoise, Mode=OneWay}" DataFontSize="16" HeaderFontSize="8" Header="MAX" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" IsReadOnly="true" />
+                                    <controls:StatBox Value="{Binding Poise}" Header="POI" Grid.Row="1" Grid.RowSpan="2" Grid.Column="0" DataFontSize="24" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
+                                    <controls:StatBox Margin="2,0,0,0" Grid.Column="1" Grid.Row="2" Value="{Binding MaxPoise, Mode=OneWay}" DataFontSize="16" HeaderFontSize="8" Header="MAX" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" IsReadOnly="true" />
                                 </Grid>
                                 <!--Intelligence-->
                                 <Grid Grid.Row="6" Grid.RowSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="2.5">
@@ -682,8 +683,8 @@
                                         <RowDefinition Height="2*"/>
                                         <RowDefinition />
                                     </Grid.RowDefinitions>
-                                    <local:StatBox Value="{Binding Intelligence}" DataFontSize="30" Header="INT" Grid.Row="1" Grid.RowSpan="2" Grid.Column="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
-                                    <local:StatBox Margin="2,0,0,0" Grid.Column="1" Grid.Row="2" Value="{Binding MaxIntelligence, Mode=OneWay}" DataFontSize="24" HeaderFontSize="8" Header="MAX" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" IsReadOnly="true" />
+                                    <controls:StatBox Value="{Binding Intelligence}" DataFontSize="30" Header="INT" Grid.Row="1" Grid.RowSpan="2" Grid.Column="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
+                                    <controls:StatBox Margin="2,0,0,0" Grid.Column="1" Grid.Row="2" Value="{Binding MaxIntelligence, Mode=OneWay}" DataFontSize="24" HeaderFontSize="8" Header="MAX" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" IsReadOnly="true" />
                                 </Grid>
                                 <!--Arcane-->
                                 <Grid Grid.Row="6" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="2.5">
@@ -697,8 +698,8 @@
                                         <RowDefinition Height="4*"/>
                                         <RowDefinition />
                                     </Grid.RowDefinitions>
-                                    <local:StatBox Value="{Binding Arcane}" Header="ARC" Grid.Row="1" Grid.RowSpan="2" Grid.Column="0" DataFontSize="24" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
-                                    <local:StatBox Margin="2,0,0,0" Grid.Column="1" Grid.Row="2" Value="{Binding MaxArcane, Mode=OneWay}" DataFontSize="16" HeaderFontSize="8" Header="MAX" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" IsReadOnly="true" />
+                                    <controls:StatBox Value="{Binding Arcane}" Header="ARC" Grid.Row="1" Grid.RowSpan="2" Grid.Column="0" DataFontSize="24" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
+                                    <controls:StatBox Margin="2,0,0,0" Grid.Column="1" Grid.Row="2" Value="{Binding MaxArcane, Mode=OneWay}" DataFontSize="16" HeaderFontSize="8" Header="MAX" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" IsReadOnly="true" />
                                 </Grid>
                                 <!--Perception-->
                                 <Grid Grid.Column="1" Grid.Row="7" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="2.5">
@@ -712,8 +713,8 @@
                                         <RowDefinition Height="4*"/>
                                         <RowDefinition />
                                     </Grid.RowDefinitions>
-                                    <local:StatBox Value="{Binding Perception}" Header="PER" Grid.Row="1" Grid.RowSpan="2" Grid.Column="0" DataFontSize="24" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
-                                    <local:StatBox Margin="2,0,0,0" Grid.Column="1" Grid.Row="2" Value="{Binding MaxPerception, Mode=OneWay}" DataFontSize="16" HeaderFontSize="8" Header="MAX" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" IsReadOnly="true" />
+                                    <controls:StatBox Value="{Binding Perception}" Header="PER" Grid.Row="1" Grid.RowSpan="2" Grid.Column="0" DataFontSize="24" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
+                                    <controls:StatBox Margin="2,0,0,0" Grid.Column="1" Grid.Row="2" Value="{Binding MaxPerception, Mode=OneWay}" DataFontSize="16" HeaderFontSize="8" Header="MAX" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" IsReadOnly="true" />
                                 </Grid>
                                 <Separator Grid.Row="2" Grid.ColumnSpan="2" />
                                 <Separator Grid.Row="5" Grid.ColumnSpan="2" />
@@ -768,18 +769,18 @@
                                     </StackPanel>
                                     <StackPanel Margin="5,0,0,0" Grid.Column="2">
                                         <StackPanel Orientation="Horizontal" Margin="0,5">
-                                            <local:StatBox Header="rng" Value="{Binding RangedWeapon1.Range}" Width="32" Height="35" DataFontSize="16" />
-                                            <local:StatBox Header="rat" Value="{Binding RangedWeapon1.Rating}" Width="32" Height="35" Margin="2,0" DataFontSize="16" />
-                                            <local:StatBox Header="pow" Value="{Binding RangedWeapon1.Power}" Width="32" Height="35" DataFontSize="16"/>
+                                            <controls:StatBox Header="rng" Value="{Binding RangedWeapon1.Range}" Width="32" Height="35" DataFontSize="16" />
+                                            <controls:StatBox Header="rat" Value="{Binding RangedWeapon1.Rating}" Width="32" Height="35" Margin="2,0" DataFontSize="16" />
+                                            <controls:StatBox Header="pow" Value="{Binding RangedWeapon1.Power}" Width="32" Height="35" DataFontSize="16"/>
                                         </StackPanel>
                                         <TextBox Text="{Binding RangedWeapon1.Ammo}" Margin="0,0,0,0" Width="100" ui:Masking.Mask="^\d+$" TextAlignment="Center" />
                                         <TextBlock Text="ammo" FontSize="8" />
                                     </StackPanel>
                                     <StackPanel Margin="5,0,0,0" Grid.Column="2" Grid.Row="1">
                                         <StackPanel Orientation="Horizontal">
-                                            <local:StatBox Header="rng" Value="{Binding RangedWeapon2.Range}" Width="32" Height="35" DataFontSize="16"/>
-                                            <local:StatBox Header="rat" Value="{Binding RangedWeapon2.Rating}" Width="32" Height="35" Margin="2,0" DataFontSize="16" />
-                                            <local:StatBox Header="pow" Value="{Binding RangedWeapon2.Power}" Width="32" Height="35" DataFontSize="16"/>
+                                            <controls:StatBox Header="rng" Value="{Binding RangedWeapon2.Range}" Width="32" Height="35" DataFontSize="16"/>
+                                            <controls:StatBox Header="rat" Value="{Binding RangedWeapon2.Rating}" Width="32" Height="35" Margin="2,0" DataFontSize="16" />
+                                            <controls:StatBox Header="pow" Value="{Binding RangedWeapon2.Power}" Width="32" Height="35" DataFontSize="16"/>
                                         </StackPanel>
                                         <TextBox Text="{Binding RangedWeapon2.Ammo}" Margin="0,4,0,0" Width="100" ui:Masking.Mask="^\d+$" TextAlignment="Center" />
                                         <TextBlock Text="ammo" FontSize="8" />
@@ -812,8 +813,8 @@
                                         <TextBlock Text="notes" FontSize="8" />
                                     </StackPanel>
                                     <StackPanel Orientation="Horizontal" Grid.Column="2" Grid.Row="0" VerticalAlignment="Bottom" Margin="3,0,0,10">
-                                        <local:StatBox Header="mat" Value="{Binding MeleeWeapon1.Material}" Width="32" Height="35" DataFontSize="16" />
-                                        <local:StatBox Header="p+s" Value="{Binding MeleeWeapon1.PSComposite, Mode=OneWay}" IsReadOnly="true" Margin="2,0,0,0" Width="32" Height="35" DataFontSize="16" />
+                                        <controls:StatBox Header="mat" Value="{Binding MeleeWeapon1.Material}" Width="32" Height="35" DataFontSize="16" />
+                                        <controls:StatBox Header="p+s" Value="{Binding MeleeWeapon1.PSComposite, Mode=OneWay}" IsReadOnly="true" Margin="2,0,0,0" Width="32" Height="35" DataFontSize="16" />
                                     </StackPanel>
                                     <StackPanel Margin="5,0,0,0" Grid.Column="1" Grid.Row="1">
                                         <TextBox Text="{Binding MeleeWeapon2.Name}" Width="130" />
@@ -822,8 +823,8 @@
                                         <TextBlock Text="notes" FontSize="8" />
                                     </StackPanel>
                                     <StackPanel Orientation="Horizontal" Grid.Column="2" Grid.Row="1" VerticalAlignment="Bottom" Margin="3,0,0,10">
-                                        <local:StatBox Header="mat" Value="{Binding MeleeWeapon2.Material}" Width="32" Height="35" DataFontSize="16" />
-                                        <local:StatBox Header="p+s" Value="{Binding MeleeWeapon2.PSComposite, Mode=OneWay}" IsReadOnly="true" Margin="2,0,0,0" Width="32" Height="35" DataFontSize="16" />
+                                        <controls:StatBox Header="mat" Value="{Binding MeleeWeapon2.Material}" Width="32" Height="35" DataFontSize="16" />
+                                        <controls:StatBox Header="p+s" Value="{Binding MeleeWeapon2.PSComposite, Mode=OneWay}" IsReadOnly="true" Margin="2,0,0,0" Width="32" Height="35" DataFontSize="16" />
                                     </StackPanel>
                                 </Grid>
                             </StackPanel>
@@ -851,9 +852,9 @@
                                     <TextBlock Text="notes" FontSize="8" />
                                 </StackPanel>
                                 <StackPanel Grid.RowSpan="2" Orientation="Horizontal" Grid.Column="1" Margin="5,0,0,10" VerticalAlignment="Bottom">
-                                    <local:StatBox Value="{Binding AdditionalWeapon.Stat1}" Width="32" Height="32" DataFontSize="16" />
-                                    <local:StatBox Value="{Binding AdditionalWeapon.Stat2}" Width="32" Height="32" DataFontSize="16" Margin="2,0" />
-                                    <local:StatBox Value="{Binding AdditionalWeapon.Stat3}" Width="32" Height="32" DataFontSize="16"/>
+                                    <controls:StatBox Value="{Binding AdditionalWeapon.Stat1}" Width="32" Height="32" DataFontSize="16" />
+                                    <controls:StatBox Value="{Binding AdditionalWeapon.Stat2}" Width="32" Height="32" DataFontSize="16" Margin="2,0" />
+                                    <controls:StatBox Value="{Binding AdditionalWeapon.Stat3}" Width="32" Height="32" DataFontSize="16"/>
                                 </StackPanel>
                             </Grid>
                         </GroupBox>
@@ -878,11 +879,11 @@
                                     <TextBlock Text="stat" HorizontalAlignment="Center" FontSize="10" />
                                 </StackPanel>
                                 <TextBlock Text="+" VerticalAlignment="Center" Margin="4,0"/>
-                                <local:StatBox Header="race mod" Value="{Binding RacialModifier, Mode=OneWay}" IsReadOnly="True" Height="35" Width="36" HeaderFontSize="6" DataFontSize="16" />
+                                <controls:StatBox Header="race mod" Value="{Binding RacialModifier, Mode=OneWay}" IsReadOnly="True" Height="35" Width="36" HeaderFontSize="6" DataFontSize="16" />
                                 <TextBlock Text="+" VerticalAlignment="Center" Margin="4,0"/>
-                                <local:StatBox Header="equip mod" Value="{Binding EquipmentModifier, Mode=OneWay}" IsReadOnly="True" Height="35" Width="36" HeaderFontSize="6" DataFontSize="16" />
+                                <controls:StatBox Header="equip mod" Value="{Binding EquipmentModifier, Mode=OneWay}" IsReadOnly="True" Height="35" Width="36" HeaderFontSize="6" DataFontSize="16" />
                                 <TextBlock Text="=" VerticalAlignment="Center" Margin="4,0"/>
-                                <local:StatBox Header="total def" Value="{Binding TotalDefense, Mode=OneWay}" IsReadOnly="True" Height="35" Width="36" HeaderFontSize="6" DataFontSize="16" />
+                                <controls:StatBox Header="total def" Value="{Binding TotalDefense, Mode=OneWay}" IsReadOnly="True" Height="35" Width="36" HeaderFontSize="6" DataFontSize="16" />
                             </StackPanel>
                         </GroupBox>
                         <!--Armor-->
@@ -896,13 +897,13 @@
                                     <TextBlock Text="stat" HorizontalAlignment="Center" FontSize="10" />
                                 </StackPanel>
                                 <TextBlock Text="+" VerticalAlignment="Center" Margin="4,0"/>
-                                <local:StatBox Header="shield mod" Value="{Binding ShieldModifier}" Height="35" Width="36" HeaderFontSize="6" DataFontSize="16" />
+                                <controls:StatBox Header="shield mod" Value="{Binding ShieldModifier}" Height="35" Width="36" HeaderFontSize="6" DataFontSize="16" />
                                 <TextBlock Text="+" VerticalAlignment="Center" Margin="4,0"/>
-                                <local:StatBox Header="armor mod" Value="{Binding ArmorModifier}" Height="35" Width="36" HeaderFontSize="6" DataFontSize="16" />
+                                <controls:StatBox Header="armor mod" Value="{Binding ArmorModifier}" Height="35" Width="36" HeaderFontSize="6" DataFontSize="16" />
                                 <TextBlock Text="+" VerticalAlignment="Center" Margin="4,0"/>
-                                <local:StatBox Header="other mod" Value="{Binding OtherModifier}" Height="35" Width="36" HeaderFontSize="6" DataFontSize="16" />
+                                <controls:StatBox Header="other mod" Value="{Binding OtherModifier}" Height="35" Width="36" HeaderFontSize="6" DataFontSize="16" />
                                 <TextBlock Text="=" VerticalAlignment="Center" Margin="4,0"/>
-                                <local:StatBox Header="total arm" Value="{Binding TotalArmor, Mode=OneWay}" IsReadOnly="True" Height="35" Width="36" HeaderFontSize="6" DataFontSize="16" />
+                                <controls:StatBox Header="total arm" Value="{Binding TotalArmor, Mode=OneWay}" IsReadOnly="True" Height="35" Width="36" HeaderFontSize="6" DataFontSize="16" />
                             </StackPanel>
                         </GroupBox>
                         <!--Initiative-->
@@ -926,11 +927,11 @@
                                     <TextBlock Text="stat" HorizontalAlignment="Center" FontSize="10" />
                                 </StackPanel>
                                 <TextBlock Text="+" VerticalAlignment="Center" Margin="4,0"/>
-                                <local:StatBox Header="equip mod" Value="{Binding EquipmentModifier, Mode=OneWay}" IsReadOnly="True" Height="35" Width="36" HeaderFontSize="6" DataFontSize="16" />
+                                <controls:StatBox Header="equip mod" Value="{Binding EquipmentModifier, Mode=OneWay}" IsReadOnly="True" Height="35" Width="36" HeaderFontSize="6" DataFontSize="16" />
                                 <TextBlock Text="+" VerticalAlignment="Center" Margin="4,0"/>
-                                <local:StatBox Header="add mod" Value="{Binding AdditionalModifier, Mode=OneWay}" IsReadOnly="True" Height="35" Width="36" HeaderFontSize="6" DataFontSize="16" />
+                                <controls:StatBox Header="add mod" Value="{Binding AdditionalModifier, Mode=OneWay}" IsReadOnly="True" Height="35" Width="36" HeaderFontSize="6" DataFontSize="16" />
                                 <TextBlock Text="=" VerticalAlignment="Center" Margin="4,0"/>
-                                <local:StatBox Header="total init" Value="{Binding TotalInitiative, Mode=OneWay}" IsReadOnly="True" Height="35" Width="36" HeaderFontSize="6" DataFontSize="16" />
+                                <controls:StatBox Header="total init" Value="{Binding TotalInitiative, Mode=OneWay}" IsReadOnly="True" Height="35" Width="36" HeaderFontSize="6" DataFontSize="16" />
                             </StackPanel>
                         </GroupBox>
                         <!--Command Range-->
@@ -944,11 +945,11 @@
                                     <TextBlock Text="stat" HorizontalAlignment="Center" FontSize="10" />
                                 </StackPanel>
                                 <TextBlock Text="+" VerticalAlignment="Center" Margin="4,0"/>
-                                <local:StatBox Header="com skill" Value="{Binding CommandSkill}" Height="35" Width="36" HeaderFontSize="6" DataFontSize="16" />
+                                <controls:StatBox Header="com skill" Value="{Binding CommandSkill}" Height="35" Width="36" HeaderFontSize="6" DataFontSize="16" />
                                 <TextBlock Text="+" VerticalAlignment="Center" Margin="4,0"/>
-                                <local:StatBox Header="ability mod" Value="{Binding AbilityModifier}" Height="35" Width="36" HeaderFontSize="6" DataFontSize="16" />
+                                <controls:StatBox Header="ability mod" Value="{Binding AbilityModifier}" Height="35" Width="36" HeaderFontSize="6" DataFontSize="16" />
                                 <TextBlock Text="=" VerticalAlignment="Center" Margin="4,0"/>
-                                <local:StatBox Header="total cmd" Value="{Binding TotalCommandRange, Mode=OneWay}" IsReadOnly="True" Height="35" Width="36" HeaderFontSize="6" DataFontSize="16" />
+                                <controls:StatBox Header="total cmd" Value="{Binding TotalCommandRange, Mode=OneWay}" IsReadOnly="True" Height="35" Width="36" HeaderFontSize="6" DataFontSize="16" />
                             </StackPanel>
                         </GroupBox>
                     </StackPanel>
@@ -1059,13 +1060,13 @@
                                 </TextBlock>
                             </GroupBox.Header>
                             <DockPanel>
-                                <local:StatBox DockPanel.Dock="Left" Margin="5,15,5,5">
-                                    <local:StatBox.Header>
+                                <controls:StatBox DockPanel.Dock="Left" Margin="5,15,5,5">
+                                    <controls:StatBox.Header>
                                         CURRENT
                                         FEAT
                                         POINTS
-                                    </local:StatBox.Header>
-                                </local:StatBox>
+                                    </controls:StatBox.Header>
+                                </controls:StatBox>
                                 <TextBlock TextWrapping="Wrap">
                                 </TextBlock>
                             </DockPanel>

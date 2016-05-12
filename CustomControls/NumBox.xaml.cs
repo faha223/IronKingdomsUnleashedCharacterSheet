@@ -1,7 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 
-namespace IronKingdomsUnleashedCharacterSheet
+namespace IronKingdomsUnleashedCharacterSheet.CustomControls
 {
     /// <summary>
     /// Interaction logic for NumBox.xaml

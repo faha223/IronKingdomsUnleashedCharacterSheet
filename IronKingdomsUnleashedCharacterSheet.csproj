@@ -35,6 +35,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Expression.Interactions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\System.Windows.Interactivity.WPF.2.0.20525\lib\net40\Microsoft.Expression.Interactions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>packages\Newtonsoft.Json.8.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
@@ -44,6 +48,10 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\System.Windows.Interactivity.WPF.2.0.20525\lib\net40\System.Windows.Interactivity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -63,6 +71,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="BaseClasses\PropertyChangedNotifier.cs" />
+    <Compile Include="CustomControls\MultiselectComboBox.xaml.cs">
+      <DependentUpon>MultiselectComboBox.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DataHelpers\BitmapImageExtensions.cs" />
     <Compile Include="Enums\Archetype.cs" />
     <Compile Include="Enums\Race.cs" />
@@ -79,22 +90,29 @@
     <Compile Include="GameData\Tables.cs" />
     <Compile Include="GameData\Weapon.cs" />
     <Compile Include="GameData\WornArmor.cs" />
-    <Compile Include="NumBox.xaml.cs">
+    <Compile Include="CustomControls\NumBox.xaml.cs">
       <DependentUpon>NumBox.xaml</DependentUpon>
     </Compile>
-    <Compile Include="StatBox.xaml.cs">
+    <Compile Include="CustomControls\StatBox.xaml.cs">
       <DependentUpon>StatBox.xaml</DependentUpon>
     </Compile>
     <Compile Include="UIHelpers\Masking.cs" />
+    <Compile Include="UIHelpers\ParameteredCommandRouter.cs" />
     <Compile Include="UIHelpers\ParameterlessCommandRouter.cs" />
+    <Compile Include="ValueConverters\CareerNamesConverter.cs" />
     <Compile Include="ValueConverters\CaseConverter.cs" />
     <Compile Include="ValueConverters\EnumStringCleaner.cs" />
     <Compile Include="ValueConverters\FalseToCollapsedConverter.cs" />
     <Compile Include="ValueConverters\InchesToHeightConverter.cs" />
+    <Compile Include="ValueConverters\ItemInContainerConverter.cs" />
     <Compile Include="ValueConverters\NullToCollapsedConverter.cs" />
     <Compile Include="ValueConverters\WeightToPoundsConverter.cs" />
     <Compile Include="ViewModels\CharacterSheetViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
+    <Page Include="CustomControls\MultiselectComboBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -107,11 +125,11 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="NumBox.xaml">
+    <Page Include="CustomControls\NumBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="StatBox.xaml">
+    <Page Include="CustomControls\StatBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

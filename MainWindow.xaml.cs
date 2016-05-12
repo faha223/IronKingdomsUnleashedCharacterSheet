@@ -1,21 +1,8 @@
 ﻿using IronKingdomsUnleashedCharacterSheet.ViewModels;
 using Microsoft.Win32;
 using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using System.ComponentModel;
 
 namespace IronKingdomsUnleashedCharacterSheet
@@ -40,7 +27,8 @@ namespace IronKingdomsUnleashedCharacterSheet
             var result = dlg.ShowDialog();
             if (result.HasValue && result.Value)
             {
-                File.WriteAllText(dlg.FileName, JsonConvert.SerializeObject(DataContext, Formatting.Indented));
+                var content = JsonConvert.SerializeObject(DataContext, Formatting.Indented);
+                File.WriteAllText(dlg.FileName, content);
             }
         }
 
@@ -51,7 +39,8 @@ namespace IronKingdomsUnleashedCharacterSheet
             var result = dlg.ShowDialog();
             if (result.HasValue && result.Value)
             {
-                DataContext = JsonConvert.DeserializeObject<CharacterSheetViewModel>(File.ReadAllText(dlg.FileName));
+                var content = File.ReadAllText(dlg.FileName);
+                DataContext = JsonConvert.DeserializeObject<CharacterSheetViewModel>(content);
             }
         }
 

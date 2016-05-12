@@ -5,10 +5,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
-using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using IronKingdomsUnleashedCharacterSheet.DataHelpers;
 using IronKingdomsUnleashedCharacterSheet.Enums;
@@ -77,18 +74,20 @@ namespace IronKingdomsUnleashedCharacterSheet.ViewModels
         }
 
         [JsonProperty]
-        private string _career { get; set; }
+        private List<string> _careers { get; set; }
         [JsonIgnore]
-        public Career Career
+        public IEnumerable<object> SelectedCareers
         {
             get
             {
-                return Tables.Careers.SingleOrDefault(c => c.Name == _career);
+                if(_careers != null)
+                    return Tables.Careers.Where(c => _careers.Contains(c.Name));
+                return null;
             }
             set
             {
-                _career = value.Name;
-                NotifyPropertyChanged("Career");
+                _careers = value.Cast<Career>().Select(c => c.Name).ToList();
+                NotifyPropertyChanged("SelectedCareers");
             }
         }
 
